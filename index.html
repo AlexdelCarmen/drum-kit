@@ -57,7 +57,12 @@
     <audio data-key="75" src="./sounds/tom.wav"></audio>
     <audio data-key="76" src="./sounds/tink.wav"></audio>
     <script>
-        
+        window.addEventListener('keydown', function(e) {
+            const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
+            if (!audio) return; // stops fucntion from working altogether if a key not assigned to any audio is pressed
+
+            audio.play(); 
+        });
     </script>
 </body>
 </html>
